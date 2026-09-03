@@ -24,8 +24,19 @@ export default function HomeScreen( ) {
         
         <TextInput style={styles.input}
         placeholder='Digite uma tarefa'
+        value= {tarefa}
+        onChangeText={setTarefa}
           />
-        
+          {tarefas.map((item, index)=>(
+            <Text
+            key={index}
+            style={styles.item}
+            >
+              .{item}
+            
+          
+        </Text>
+          ))}
         </View>
   ); 
 } 
@@ -46,4 +57,8 @@ const styles=StyleSheet.create({
      borderRadius: 8,
      padding: 12,
     },
+    item:{
+      fontSize: 16,
+      marginTop: 10,
+    }
   });
